@@ -1,0 +1,53 @@
+{
+  "server": {
+    "load": {
+      "sampleInterval": 1000
+    }
+  },
+  "connections": [
+    {
+      "port": 3000,
+      "labels": ["api"],
+      "routes": {
+        "cors": true
+      },
+      "load": {
+        "maxHeapUsedBytes": 1073741824,
+        "maxRssBytes": 1610612736,
+        "maxEventLoopDelay": 1000
+      }
+    }
+  ],
+  "registrations": [
+    {
+      "plugin": {
+        "register": "good",
+        "options": {
+          "opsInterval": 15000,
+          "requestHeaders": true,
+          "requestPayload": true,
+          "responsePayload": true,
+          "reporters": [
+            {
+              "reporter": "good-console",
+              "events": {
+                "error": "*",
+                "request": "*",
+                "log": "*",
+                "response": "*",
+                "wreck": "*"
+              }
+            }
+          ],
+          "filter": {
+            "email": "censor",
+            "password": "censor"
+          }
+        }
+      }
+    },
+    {
+      "plugin": "./hello-world"
+    }
+  ]
+}

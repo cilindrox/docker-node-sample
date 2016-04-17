@@ -1,0 +1,38 @@
+{
+  "name": "docker-sample",
+  "version": "0.0.0",
+  "description": "A sample NodeJS app using Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "rejoice -c config.json -p lib/modules",
+    "test": "lab -La code -t 100",
+    "test-cov-html": "lab -r html -o coverage.html -La code"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cilindrox/node-docker-sample.git"
+  },
+  "keywords": [
+    "docker",
+    "node",
+    "sample"
+  ],
+  "author": "gfestari <cilindrox@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cilindrox/node-docker-sample/issues"
+  },
+  "homepage": "https://github.com/cilindrox/node-docker-sample#readme",
+  "dependencies": {
+    "boom": "^3.1.2",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
+    "hapi": "^13.3.0",
+    "joi": "^8.0.5",
+    "rejoice": "^3.1.0"
+  },
+  "devDependencies": {
+    "code": "^2.2.0",
+    "lab": "^10.3.1"
+  }
+}
