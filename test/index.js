@@ -38,7 +38,7 @@ describe('Hello World', () => {
             server.inject(request, (response) => {
 
                 expect(response.statusCode).to.equal(200);
-                expect(response.result).to.deep.equal({ msg: 'hello world!' });
+                expect(response.result).to.equal({ msg: 'hello world!' });
                 done();
             });
         });

@@ -1,0 +1,58 @@
+{
+  "server": {
+    "load": {
+      "sampleInterval": 1000
+    }
+  },
+  "connections": [
+    {
+      "port": 3000,
+      "labels": ["api"],
+      "routes": {
+        "cors": true
+      },
+      "load": {
+        "maxHeapUsedBytes": 1073741824,
+        "maxRssBytes": 1610612736,
+        "maxEventLoopDelay": 1000
+      }
+    }
+  ],
+  "registrations": [
+    {
+      "plugin": {
+        "register": "good",
+        "options": {
+          "ops": false,
+          "reporters": {
+            "console": [
+              {
+                "module": "good-squeeze",
+                "name": "Squeeze",
+                "args": [{
+                  "error": "*",
+                  "request": "*",
+                  "log": "*",
+                  "response": "*"
+                }]
+              },
+              {
+                "module": "white-out",
+                "args": [{
+                  "password": "censor"
+                }]
+              },
+              {
+                "module": "good-console"
+              },
+              "stdout"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "plugin": "./hello-world"
+    }
+  ]
+}
