@@ -1,15 +1,18 @@
-inventory:
-  build: .
-  command: npm start
-  ports:
-    - "3000:3000"
-  links:
-    - redis
-  environment:
-    - NODE_ENV=production
-    - REDIS_URL=redis
-
-redis:
-  image: redis:latest
-  ports:
-    - "6379:6379"
+version: '3'
+services:
+  api:
+    build: .
+    depends_on:
+      - redis
+    command: npm start
+    ports:
+      - "3000:3000"
+    links:
+      - redis
+    environment:
+      - NODE_ENV='production'
+      - REDIS_URL=redis
+  redis:
+    image: 'redis:3.2'
+    ports:
+      - '6379:6379'
