@@ -11,6 +11,7 @@ services:
       - redis
     environment:
       - NODE_ENV=production
+      - PORT=3000
       - REDIS_URL=redis
       - NPM_TOKEN
     restart: unless-stopped

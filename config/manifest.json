@@ -6,7 +6,7 @@
   },
   "connections": [
     {
-      "port": 3000,
+      "port": "$env.PORT",
       "labels": ["api"],
       "routes": {
         "cors": true

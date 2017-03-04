@@ -18,6 +18,7 @@ Settings are handled via environment vars, available config values are:
 
 | env         | desc                     |
 | ----------- | :----------------------: |
+| `PORT`      | backend service port     |
 | `REDIS_URL` | uri for the redis server |
 
 
